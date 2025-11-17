@@ -1,0 +1,89 @@
+  ML --- supervised  >regression : linear regression, Decision tree, random forest
+	   	     >classification: Logistic regression,Decision tree, random forest
+
+     --- unsupervised
+
+decision tree and random forest are for multiclassification problems
+decision tree eg:buying car
+
+random forest/bagging classifier : eg : getting opinion on dress selection and choose 
+                     most populor opinion
+   ** in case of classification , take majority vote ..  (MODE)
+
+   ** in case of regression, take average .. (MEAN). eg: predicting age
+
+---### for tree based models no need to worry about outliers as large variations are taken care
+
+
+4 impurity measures
+
+information gain is vice versa of entropy ...  
+information gain should be higher (node is split for feature with highest info gain)  
+
+for classification problem use either of entropy, gini index, information gain
+for continuous (regression) use redution in variance
+
+in decicion tree, it is tough to have both bias and variance lesser
+
+Random Forest:
+Bias:  error got from training data
+variance: error got from testing data
+
+bias and variance from random forest is  not as visible as decision tree
+as higher and lower predictions will cancel out 
+
+overfitting: expose the model to training data to such an extent apart from generalised set of trends and patterns that is suppossed to pick up,
+It also pick up the noise factor. Accuracy of training always comes up 100% but  in real world accuracy comes down
+eg: cricket team gets accustomed to home conditions as they know each and every aspects of pitch and condition but fails to perform well in away conditions
+
+In underfitting, our model is too simple and has very few variables then it may have high bias. 
+On the other hand, in overfitting, our model has more number of independent variables then it will results in high variance and low bias.
+
+Overfitting is an error that occurs in data modeling as a result of a particular function aligning too closely to a minimal set of data points.
+
+in ovefitting ---- performs well to train data but performance drops in test data
+
+OOB (out-of-bag) score is a performance metric for a machine learning model, specifically for ensemble models such as random forests. It is 
+calculated using the samples that are not used in the training of the model, which is called out-of-bag samples.
+These samples are used to provide an unbiased estimate of the model’s performance, which is known as the OOB score.
+Because sampling is done with replacement, about 63% of the data ends up in the bootstrap sample for a given tree, and the remaining ~37% is not used to train that specific tree. 
+These unused data points are called OOB samples.
+
+in logistic regression , random state ... every time populate the same values for that partiular number
+
+=------
+r2 tells variance captured
+rmse tells impact of how much error
+
+Bagging:
+draw samples from dataset(sampling with replacement), draw a record from dataset and again put back and repeat
+some might be repeated and some might not have captured
+
+
+Random forest:
+extension of bagging.
+Each time a node is split only a random subset of variables(columns) are provided to algorithm--> not all 
+(in bagging all variables(columns) are provided to algorithm)
+so correlation between the individual trees is reduced and diversity will be more
+
+**************************************
+Is it compulsory to use OOB score in Random Forest?
+
+No, it is not compulsory. OOB score is optional, and it’s just one of many ways to evaluate your model’s performance.
+
+
+
+✅ When to Use OOB Score:
+
+You want a quick estimate of model performance without using cross-validation or splitting the data.
+
+You're working with limited data, and you want to make the most of your dataset.
+
+You're using Random Forest, which supports OOB natively.
+
+✅ In scikit-learn, you just set oob_score=True when initializing the model.
+🎯 Bottom Line
+
+✅ Use OOB score for a quick performance check during training, especially if you're not doing cross-validation.
+
+✅ Use hyperparameter tuning (with CV) when you're optimizing your model for the best possible performance.
