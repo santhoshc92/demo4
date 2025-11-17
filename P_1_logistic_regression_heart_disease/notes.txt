@@ -1,15 +1,4 @@
-QUIZ ans
-1 B
-2 B...
-3 B
-4 doubt ..
-5 B
-6 C
-7  ..A
-8 B
-9 B
-10
-11 C
+smaple est on edit
 
 
 If acuracy is 99%, it is not necessary that model is good. It is
@@ -17,6 +6,3 @@ based on business use case eg: if we predict 1000 are cancer free,
 but 10 have cancer. here accuracy is 99% but 10 would have lost life
 with our prediction
 
-
-	# need info on what inference we get from model finally, if model not good what should be the next step
-# we are taking random split and how each individual is having heart attack or not
